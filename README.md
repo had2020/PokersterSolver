@@ -2,11 +2,9 @@
 
 WIP project
 
-[This is from template for my projects.
-](https://colab.research.google.com/drive/1f_LR4-uupntbOK14cFbIT3jxN4ojk3tC?usp=sharing#scrollTo=VArn8Uzo3ed_)
+We will share links in this docs together [This google docs](https://docs.google.com/document/d/1LwTZ98RWolXHxrOZ_rUOLA3m9VW6fa9ycNq79OCmUDo/edit?usp=sharing)
 
-https://colab.research.google.com/drive/1sGeKw2Kf0nrBEknEviUob4N8M6x8FgNs?usp=sharing
-
+This is a forum post with people, doing this type of project: 
 https://forumserver.twoplustwo.com/15/poker-theory-amp-gto/coding-your-own-solver-1734638/
 
 #### License
