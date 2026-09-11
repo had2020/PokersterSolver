@@ -5,7 +5,7 @@ WIP project
 We will share links in this docs together [This google docs](https://docs.google.com/document/d/1LwTZ98RWolXHxrOZ_rUOLA3m9VW6fa9ycNq79OCmUDo/edit?usp=sharing)
 
 This is a forum post with people, doing this type of project: 
-https://forumserver.twoplustwo.com/15/poker-theory-amp-gto/coding-your-own-solver-1734638/
+[This Online Forum](https://forumserver.twoplustwo.com/15/poker-theory-amp-gto/coding-your-own-solver-1734638/)
 
 #### License
 
