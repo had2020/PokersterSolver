@@ -1,12 +1,15 @@
-# Node:
+# KuhnNode:
 One node represents one turn, and has childs based on the next likely next turns.
 
-uint8_t CardsPlayed:
-- Upper (4bits) for PlayerA's card
-- Lower (4bits) for PlayerB's card
+flags: Type unsigned 8 bit integar
+bits 0-2: Node ID
+bits 3: Active Player (0 or 1)
+bits 4: Is Terminal (0 or 1)
+bits 5-7 Payoff state
 
-uint64_t LeftChildPtr:
-- Points to the node under this one, with the left state on the tree.
+playedCards: Type unsigned 8 bit integar
+High part P1: (J=1, Q=2, K=3)
+Low part P2: (J=4, Q=5, K=6)
 
-uint64_t RightChildPtr:
-- Points to the node under this one, with the right state on the tree.
+left_child_idx: Type u8 for a index of the node array
+right_child_idx: Type u8 for a index of the node array
