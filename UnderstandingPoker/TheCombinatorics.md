@@ -1,11 +1,11 @@
 # Which type of poker will be used for the solver:
 
-Leduc Hold'em is the easist to build a solver.
+Kuhn Poker is the easist to build a solver.
 As it it already [Solved](https://github.com/lifrordi/DeepStack-Leduc#leduc-hold'em)
 It is also specifally made for these sort of projects.
 And is rather simple to learn, in terms of ruleset.
 
-[Rules, and playing hands](https://pettingzoo.farama.org/environments/classic/leduc_holdem/)
+[This is the Wikipedia for the actual type of simplified form of poker we will tackle solving in this project](https://en.wikipedia.org/wiki/Kuhn_poker)
 
 [Card values](https://www.wikihow.com/Play-Poker)
 
@@ -36,3 +36,18 @@ Rightmost--(Lowest numerical/value)-->
 
 A Card can best fit into 4 bits as 2^4 = 16, therefore we can
 fit any of the 15 card into (1 of the 16 finite states) in 4bits
+
+# How the game will be played:
+There are a set 60 cards in one normal Poker card pack.
+
+The dealer will pull 3 cards 
+
+Each player will draw (1 cards), based on a set seed.
+
+The inital draw has (3^15) = 14,348,907 p2ossibilites.
+Each of these start decks, is a master node of that game, 
+with each node below it representing the next possiblites of the game, until completion.
+
+Each player can choose 1 of 3 actions:
+Bet, Raise, or Fold
+
