@@ -1,4 +1,6 @@
-
+struct node {
+    
+};
 
 int main() {
 
