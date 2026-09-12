@@ -1,3 +1,6 @@
+
+## This is some of my brainstorming
+
 # KuhnNode:
 One node represents one turn, and has childs based on the next likely next turns.
 
