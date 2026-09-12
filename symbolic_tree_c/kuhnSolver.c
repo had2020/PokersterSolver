@@ -1,9 +1,9 @@
 #include <stdint.h>
 
-/* A element of the tree is a u32, broken up like this:
-    uint8_t Card; states K=2, Q=1, J=0;
+/* A node can be best thought of as this:
+    Possible Card states: K=2, Q=1, J=0;
 
-    uint8_t History states:
+    u8 History states:
     Empty = 0,        // P1 turn 1: ""
     Check = 1,        // P2 turn 1 after P1 check: "C"
     Bet = 2,          // P2 turn 1 after P1 bet: "B"
@@ -14,32 +14,9 @@
     CheckBetCall = 6, // "CBC" -> Showdown (Pot: 4) | Winner: High card (P1 if C1 > C2, else P2)
     BetFold = 7,      // "BF"  -> P1 wins (Pot: 2)  | Winner: P1 (+1 profit, P2 folds)
     BetCall = 8,      // "BC"  -> Showdown (Pot: 4) | Winner: High card (P1 if C1 > C2, else P2)
-
-    uint8_t leftChildIdx; // Check or Fold
-    uint8_t rightChildIdx; // Bet or Call
 */
 
-// TODO: optimize finite values futher into bitfields.
-/*
-enum Card { // could be 2 bits
-  K = 2,
-  Q = 1,
-  J = 0,
-};
-
-enum History { // could be 3 bits
-  Empty = 0,
-  Check = 1,
-  Bet = 2,
-  CheckBet = 3,
-  CheckCheck = 4,
-  CheckBetFold = 5,
-  CheckBetCall = 6,
-  BetFold = 7,
-  BetCall = 8,
-};*/
-
-enum GameState {
+enum GameState { // -> next best move
   KEmpty = 0, // -> KCheck
   KCheck = 1, // -> KCheckBet
   KBet = 2, // -> KBetCall
@@ -72,12 +49,19 @@ enum GameState {
   JCheckBetCall = 24,
   JBetFold = 25,
   JBetCall = 26,
+
+  NoAction = 27,
 };
 
 int main() {
-    // this uint8_t stores the next action index
+    // this uint8_t stores the next best action index
     const enum GameState node_tree[27] = {
-        
+        KCheck, KCheckBet, KBetCall, KCheckBetCall,
+        NoAction, NoAction, NoAction, NoAction, NoAction,
+        QCheck, QCheckCheck, QBetFold, QCheckBetFold,
+        NoAction, NoAction, NoAction, NoAction, NoAction, 
+        JBet, JCheckBet, JBetFold, JCheckBetFold,
+        NoAction, NoAction, NoAction, NoAction, NoAction, 
     };
 
     return 0;
